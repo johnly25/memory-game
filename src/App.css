@@ -1,0 +1,17 @@
+body {
+    height: 100vh;
+    margin:0;
+}
+
+#root {
+    height: 100%;
+}
+.container {
+    display: grid;
+    height: 100%;
+    grid-template-rows: min-content min-content min-content 1fr
+}
+
+h2 {
+    margin:0;
+}

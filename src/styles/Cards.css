@@ -1,0 +1,18 @@
+.cards {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    min-height: 0;
+}
+
+.card img {
+    object-fit: cover;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    border: solid black;
+    overflow: hidden;
+}
