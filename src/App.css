@@ -1,17 +1,26 @@
 body {
     height: 100vh;
-    margin:0;
+    width: 100vw;
+    margin: 0;
 }
 
 #root {
     height: 100%;
+    width: 100%;
+    background-image: url('./assets/background6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 .container {
     display: grid;
     height: 100%;
-    grid-template-rows: min-content min-content min-content 1fr
+    width: 100%;
+    grid-template-rows: repet(min-content,3) 4fr
 }
 
+
+
 h2 {
-    margin:0;
+    margin: 0;
 }

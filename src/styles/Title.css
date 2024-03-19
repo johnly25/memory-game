@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'saiyan-saga';
+    src: url('../assets/Saiyan-Sans.ttf') format(truetype);
+}
+.title img {
+    height: 100px;
+    width: auto;
+    
+}
+
+.title h1 {
+    margin: 0;
+}
+
+.title {
+    font-family: 'saiyan-saga';
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

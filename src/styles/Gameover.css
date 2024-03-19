@@ -1,0 +1,26 @@
+.modal {
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+    width: 40vw;
+    height: 60vh;
+    padding:2rem;
+    border: none;
+}
+
+.modal div {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    object-fit: contain;
+    height:auto;
+    width: 80%;
+}
+.modal button {
+    width: fit-content;
+}

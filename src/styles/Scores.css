@@ -1,0 +1,5 @@
+.scores {
+    display: flex;
+    gap: 15rem;
+    justify-content: center;
+}
