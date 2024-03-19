@@ -27,7 +27,7 @@ export function Cards(props) {
             }
         }
         fetchDBZ(url)
-    }, [currentList]);
+    }, [currentList ]);
 
     useEffect(() => {
         if (!props.gameOver) {

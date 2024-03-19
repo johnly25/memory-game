@@ -25,8 +25,8 @@ export function Card(props) {
 
     return (
         <ReactCardFlip isFlipped={props.isFlipped} flipDirection="horizontal">
-            <div className="card" onClick={onClick}>
-                <div className="image card-front">
+            <div className="card">
+                <div className="image card-front" onClick={onClick}>
                     <img src={props.src} alt="" />
                 </div>
             </div>
