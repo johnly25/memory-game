@@ -41,8 +41,8 @@ export function Cards(props) {
     useEffect(() => {
         if (props.score == props.totalCards && props.totalCards != 0) {
             props.setGameover(true);
+            setCurrentList([]);
         }
-        console.log(props.totalCards)
     },[props.totalCards, props]);
 
     const cards = list.map(card =>
