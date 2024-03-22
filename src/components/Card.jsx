@@ -4,29 +4,28 @@ import background from '../assets/card-back.png'
 export function Card(props) {
     function onClick(e) {
         e.preventDefault();
-        props.setIsFlipped(true);
-        
-        if (!props.currentList.includes(e.target.src)) {
-            props.setScore(props.score + 1); 
+        const src = e.currentTarget.getAttribute('src');
+        if (!props.game.gameList.includes(src)) {
+            let score = props.game.score + 1;
+            checkScore(score);
         } else {
-            if (props.score > props.highscore) {
-                props.setHighscore(props.score);
-            } 
-            props.setGameover(true);
+            props.setGame({ ...props.game, highscore: (props.game.score > props.game.highscore ? props.game.score : props.game.highscore), gameOver: true });
         }
-        setTimeout(() => {
-            if (!props.currentList.includes(e.target.src)) {
-                props.setCurrentList(oldArray => [...oldArray, e.target.src]);
+
+        function checkScore(score) {
+            if(score == props.game.totalCards) {
+                props.setGame({ ...props.game, score: score, highscore: (score > props.game.highscore ? score : props.game.highscore),gameOver: true, playerWin: true});
+
             } else {
-                props.setCurrentList([]);
+                props.setGame({ ...props.game, score: score, gameList: [...props.game.gameList, src] });
             }
-        }, 500);
+        }
     }
 
     return (
-        <ReactCardFlip isFlipped={props.isFlipped} flipDirection="horizontal">
+        <ReactCardFlip flipDirection="horizontal">
             <div className="card">
-                <div className="image card-front" onClick={onClick}>
+                <div className="image card-front" src={props.src} onClick={onClick}>
                     <img src={props.src} alt="" />
                 </div>
             </div>

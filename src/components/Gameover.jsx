@@ -5,13 +5,10 @@ import goku from '../assets/goku-thumbs-up.gif'
 
 function Screen(props) {
     let content;
-
     function handleClick() {
-        props.setGameover(false);
-        props.setScore(0);
+        props.setGame({...props.game, gameOver: false, score: 0, gameList: [], playerWin: false});
     }
-
-    if (props.score == props.totalCards) {
+    if (props.game.playerWin) {
         content = (
             <>
                 <img src={goku}></img>
@@ -26,7 +23,6 @@ function Screen(props) {
            </>
         )
     }
-
     return (
         <div>
             {content}
@@ -34,14 +30,14 @@ function Screen(props) {
         </div>
     )
 }
+
 export function Gameover(props) {
     const [isModalOpen, setModalOpen] = useState(false);
     const modalRef = useRef(null);
 
-
     useEffect(() => {
-        setModalOpen(props.gameOver);
-    }, [props.gameOver]);
+        setModalOpen(props.game.gameOver);
+    }, [props.game.gameOver]);
 
     useEffect(() => {
         const modalElement = modalRef.current;

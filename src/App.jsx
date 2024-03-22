@@ -4,19 +4,23 @@ import { Title } from './components/Title'
 import { Cards } from './components/Cards';
 import { Gameover } from './components/Gameover';
 import { Scores } from './components/Scores';
-//round
+
 function App() {
-  const [highscore, setHighscore] = useState(0);
-  const [score, setScore] = useState(0);
-  const [gameOver, setGameover] = useState(false);
-  const [totalCards, setTotalCards] = useState(0);
+  const [game, setGame] = useState({
+    highscore: 0,
+    score: 0, 
+    gameOver: false,
+    playerWin: false,
+    totalCards: 0,
+    gameList: []
+  });
 
   return (
     <div className='container'>
       <Title title='Memory Game' />
-      <Scores  highscore={highscore}  score={score}/>
-      <Cards score={score} setScore={setScore} gameOver={gameOver} setGameover={setGameover} highscore={highscore} setHighscore={setHighscore} totalCards={totalCards} setTotalCards={setTotalCards} />
-      <Gameover score={score} setScore={setScore} gameOver={gameOver} setGameover={setGameover} totalCards={totalCards} />
+      <Scores game={game}/>
+      <Cards  game={game} setGame={setGame} />
+      <Gameover  game={game} setGame={setGame}/>
     </div>
   )
 }
