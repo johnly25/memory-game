@@ -30,7 +30,7 @@ export function Cards(props) {
     
 
     const cards = list.map((card, i) =>
-        <Card {...props} key={i} src={card.image} isFlipped={isFlipped} setIsFlipped={setIsFlipped} setUpdate = {setUpdate} />
+        <Card {...props} key={i} src={card.image} isFlipped={isFlipped} setIsFlipped={setIsFlipped}/>
     );
 
     return (
