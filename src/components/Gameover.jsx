@@ -23,6 +23,7 @@ function Screen(props) {
            </>
         )
     }
+    
     return (
         <div>
             {content}
