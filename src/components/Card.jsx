@@ -1,5 +1,6 @@
 import ReactCardFlip from 'react-card-flip';
 import background from '../assets/card-back.png'
+import { useEffect } from 'react';
 
 export function Card(props) {
     function onClick(e) {
